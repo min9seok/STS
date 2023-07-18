@@ -10,7 +10,7 @@ public class Ex03_02 {
 			 System.out.print("> 정수입력 ? ");
 			 n = sc.nextInt();
 			 String result = "짝수(even number)";
-			 if (n%2 ==0) {
+			 if (n%2 !=0) {
 			//	 System.out.printf("n=%d 짝수",n);
 				 result = "홀수(odd number)";
 			 }							
