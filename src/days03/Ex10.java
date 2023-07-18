@@ -45,15 +45,7 @@ public class Ex10 {
 		
 		char ch = 66;
 		System.out.println('a' <= ch && ch <='z' || 'A' <= ch  &&  ch <='Z');
-				System.out.println( 'A' <= ch  &&  ch <='z');
-				
-				
-		
-		
-		
-		
-					
-		
+				System.out.println( 'A' <= ch  &&  ch <='z');																				
 		
 	}//main
 
