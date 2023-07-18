@@ -44,7 +44,7 @@ public class Ex01 {
 	double x;
 		Scanner sc = new Scanner(System.in);
 		x = sc.nextDouble();		
-		x = (int) (x*100 + 0.5)/100d ;
+		x = (int) (x*100 + 0.5)/100 ;
 	System.out.printf("%f",x);
 				
 	
