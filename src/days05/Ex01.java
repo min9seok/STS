@@ -25,15 +25,15 @@ public class Ex01 {
 			boolean num = Pattern.matches("^[0-9]*$", one);
 			boolean han = Pattern.matches("^[ㄱ-ㅎ가-힣]*$", one);
 			boolean x = Pattern.matches("^[!-)]*$", one);
-			if(b==true) {
+			if(b) {
 				System.out.println("소문자입니다");
-			}else if(B==true) {
+			}else if(B) {
 				System.out.println("대문자입니다");
-			}else if(num==true) {
+			}else if(num) {
 				System.out.println("숫자입니다");
-			}else if(han==true) {
+			}else if(han) {
 				System.out.println("문자입니다");
-			}else if(x==true) {
+			}else if(x) {
 				System.out.println("특수문자입니다");
 			}
 			

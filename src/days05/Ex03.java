@@ -2,8 +2,6 @@ package days05;
 
 import java.util.Scanner;
 
-//import java.util.Scanner;
-
 /**
  * @author minseok
  * @date 2023. 7. 19. - 오전 11:27:01

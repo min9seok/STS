@@ -16,9 +16,12 @@ public class Ex08 {
 	        String str = sc.next();        
 	        int n = sc.nextInt();      
 	        int len = str.length();
+	        System.out.println(len);
 	        if(1<= len && len <=10){
 	            for(int i =1; i<=5; i++){              
 	                System.out.print(str);
+
+	          
 	            }
 	        }
 	}
