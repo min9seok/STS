@@ -66,18 +66,20 @@ public class Ex08_01 {
 			for(int j =1; j<=Math.abs(2*i-1); j++) {
 				System.out.print("*");			
 			}
-			}
-			if(i==4) {
-			for(int j =1; j<=Math.abs(6-i+1); j++) {
-				System.out.print("*"
-						+ "");			
-			}
-			}else if (i==5) {
+			}else {
 				for(int j =1; j<=Math.abs(6-i); j++) {
-					System.out.print("*");
+					System.out.print("*");			
+				}	
 			}
-			
-			}
+//			if(i==4) {
+//			for(int j =1; j<=6-i+1; j++) {
+//				System.out.print("*");			
+//			}
+//			}else if (i==5) {
+//				for(int j =1; j<=6-i; j++) {
+//					System.out.print("*");
+//			}			
+//			}
 			System.out.println();
 		}
 	}

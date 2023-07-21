@@ -13,7 +13,7 @@ public class Ex02 {
 			System.out.print("> 한 문자 입력 ? ");
 			code = System.in.read();
 			System.out.printf("code = %c\n",(char)code);
-			System.in.skip(System.in.available());
+			System.in.skip(System.in.available()); 
 			System.out.print("\n\n 계속할거냐? ");
 			code = System.in.read(); // 'y' 'n'			
 			con = (char)code;
