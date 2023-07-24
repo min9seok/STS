@@ -9,10 +9,10 @@ public class Ex02 {
 		System.out.print("> 이등변 삼각형 행 갯수 ? ");
 		int row = sc.nextInt();
 		int col = 2*row-1;
-		for(int i =1; i<=row;i++) {
+		for(int i =1; i<=row;i++) { //입력값의 해당하는 행 까지 
 			System.out.printf("%02d :",i);
-			for(int j=1;j<=col;j++) {
-				if(i+j>=row+1  && j-i<=row-1) {
+			for(int j=1;j<=col;j++) { //별과 공백을 찍는 
+				if(i+j>=row+1  && j-i<=row-1) { // i+j 가  입력값+1보다 크거나 -1보다 작으면 *					
 					System.out.print("*");
 				}else {
 					System.out.print("_");
