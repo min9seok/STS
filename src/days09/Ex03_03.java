@@ -55,6 +55,7 @@ public class Ex03_03 {
 				count = 2;
 			}
 		}		
+		System.out.println(sum);
 		sum = (11-sum%11);
 		int ㅍ = rrn.charAt(12) - '0';	    
 		System.out.println(sum);
