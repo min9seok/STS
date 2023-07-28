@@ -73,7 +73,7 @@ public class Ex06_04 {
 		
 	}//main
 
-	private static String getName() {				
+	public static String getName() {				
 		
 		Random rnd = new Random();
 		char nameArr[] = new char[3];
@@ -84,12 +84,12 @@ public class Ex06_04 {
 		return name;
 	}
 
-	private static int getScore() {
+	public static int getScore() {
 		
 		return (int)(Math.random()*101);
 	}
 
-	private static void procRank(int[] tots, int[] ranks,int count) {		
+	public static void procRank(int[] tots, int[] ranks,int count) {		
 		for (int i = 0; i < count; i++) {
 			ranks[i] =1;
 			for (int j = 0; j < count; j++) {
@@ -100,7 +100,7 @@ public class Ex06_04 {
 		} // for	
 	}
 
-	private static void printStudentInfo(String[] names, int[] kors, int[] engs, int[] mats, int[] tots, double[] avgs,int[] ranks,int count) {
+	public static void printStudentInfo(String[] names, int[] kors, int[] engs, int[] mats, int[] tots, double[] avgs,int[] ranks,int count) {
 
 		for (int i = 0; i < count; i++) {
 			System.out.printf("%d번\t%s\t%d\t%d\t%d\t%d\t%.2f\t %d등\n",i+1,names[i],kors[i],engs[i],mats[i],tots[i],avgs[i],ranks[i]);

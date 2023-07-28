@@ -22,13 +22,21 @@ public class Ex09 {
 		System.out.print("> 로또 게임 횟수 입력 ? ");
 		int game = sc.nextInt();
 		lottos = new int[game][6];		
-		int num[] = new int [6];
+		int num[] = new int [game];
 		for (int i = 0; i < lottos.length; i++) {
 			System.out.print(i+1+" 게임 ");		
 	      for (int j = 0; j <6; j++) {	    	  
 	    	  Random ran=new Random();	    	
-				int lottoNumber = (int)(Math.random()*45)+1;
-	    	  num[i] = 	ran.nextInt(45)+1;
+//				int lottoNumber = (int)(Math.random()*45)+1;
+	    	  num[i] = 	ran.nextInt(45)+1;			
+//	    	  if( num[i] == ran.nextInt(45)+1 ) {
+//	    		  num[i++] = ran.nextInt(45)+1;
+//	    	  }
+//	    	  for (int i = 0; i < index; i++) {
+//	    	         if( lotto[i] == lottoNumber ) {
+//	    	            return true;
+//	    	         } // if
+//	    	      } // for
 				System.out.print("["+num[i]+"]");
 			} // for
 	      System.out.println();
