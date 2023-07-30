@@ -1,5 +1,7 @@
 package days12;
 
+import java.util.Iterator;
+
 /**
  * @author minseok
  * @date 2023. 7. 28. - 오전 11:41:29
@@ -87,15 +89,41 @@ public class Ex04 {
 		// 43 22
 		
 		// 44 23
-		//1set  j+1
-		//2set  i+1
-		//3set  j-1
-		//4set  i-1
-		int n = 1;
+		//1set  col+1
+		//2set  row+1
+		//3set  col-1
+		//4set  row-1
+		int f = 1;
+		int e = 25;
+		int w = m.length;
+		int l = m.length-1;
 		int row = 0, col = 0;
-		while(n<=25) {
-			m[row][col] = n;
-			
+		while(f<=25) {			
+			for (int i = 0; i < w; i++) {
+				m[row][col] = f;
+				col++;
+				f++;
+			} // for
+			col--;
+			row++;
+			w--;
+			for (int i = 0; i < l; i++) {
+				m[row][col] = f;
+				row++;
+				f++;
+			} // for
+			row--;
+			col--;			
+			for (int i = 0; i < w; i++) {
+				m[row][col] = f;
+				col--;
+				f++;
+			} // for
+			for (int i = 0; i < l; i++) {
+				m[row][col] = f;
+				row--;
+				f++;
+			} // for
 		}
 		
 		
