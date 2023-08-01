@@ -1,0 +1,128 @@
+﻿1. if문의 처리 로직에 대해서 설명하세요.
+if(조건) 충족하는 조건이 오면 {} 안의 식을 실행
+1-2. if~else문의 처리 로직에 대해서 설명하세요.
+if(조건) 을 충족하지 않은 문은 else 문을 실행
+1-3. if~elseif ~elseif else문의 처리 로직에 대해서 설명하세요.
+if(조건)을 충족하지 않을 때 esle if(새로운 조건)을 충족 하는지 확인하고 다 충족하지 않으면 else문 처리 
+2. switch문의 처리 로직에 대해서 설명하세요.
+  ㄱ. key   - 변수 식
+  ㄴ. value - 리터럴
+
+3. for문의 처리 로직에 대해서 설명하세요.
+for(초기값,조건,증감) {} 조건 충족시 까지 반복
+4. break문에 대해서 설명하세요.
+break 가 써진 부분에서 제어문을 빠져나옴
+함수(메소드) 빠져나올떄는 return;
+[5]. for문을 사용해서 
+   1+2+3+..+9+10=55
+   package days05;
+
+/**
+ * @author minseok
+ * @date 2023. 7. 19. - 오전 9:00:42
+ * @subject
+ * @content
+ */
+public class Ex01 {
+
+	public static void main(String[] args) {
+		int i;
+		int sum=0;		
+		for(i=1;i<=10;i++) {
+			if(i==10) {
+			System.out.print(i);
+			}else {
+			System.out.print(i+"+");
+			}
+			sum += i;
+		}
+			System.out.print("="+sum);
+	}
+
+}
+5-2. for문을 사용해서  
+   [실행결과]
+   01 - 헬로우 월드  
+   02 - 헬로우 월드  
+   03 - 헬로우 월드  
+   04 - 헬로우 월드  
+   05 - 헬로우 월드  
+   06 - 헬로우 월드  
+   07 - 헬로우 월드  
+   08 - 헬로우 월드  
+   09 - 헬로우 월드  
+   10 - 헬로우 월드  
+package days05;
+
+/**
+ * @author minseok
+ * @date 2023. 7. 19. - 오전 9:00:42
+ * @subject
+ * @content
+ */
+public class Ex01 {
+
+	public static void main(String[] args) {
+		int i;
+		String hello = "헬로우 월드";		
+		for(i=1;i<=10;i++) {
+			if(i==10){
+			System.out.println(i+ "-" + hello);
+			}else {
+			System.out.println("0"+i+ "-" + hello);
+			}
+		}			
+	}
+
+}
+     
+6. 한 문자를 입력받아서
+   숫자, 알파벳(대,소문자), 한글, 특수문자(#$!%@)
+   입니다라고 출력하세요.
+   
+[7]. 컴퓨터와 사용자 가위바위보 게임 구현.
+     package days05;
+
+
+import java.io.IOException;
+import java.util.Scanner;
+
+/**
+ * @author minseok
+ * @date 2023. 7. 19. - 오전 9:00:42
+ * @subject
+ * @content
+ */
+public class Ex01 {
+
+	public static void main(String[] args) throws IOException {
+		int user;
+		int com;		
+		double f = Math.random()/Math.nextDown(1.0*100);		
+		com = (int) (Math.random()*3+1);		
+		Scanner sc = new Scanner(System.in);
+		System.out.print("가위(1),바위(2),보(3)");		
+		user = sc.nextInt();		
+		String rpg[] = {"","가위","주먹","보"};
+		System.out.println("사용자 : "+rpg[user]+"      컴퓨터 : "+rpg[com]);
+		switch (user-com) {
+		case -2:
+		case 1:	
+			System.out.println("사용자 승리");
+			break;
+		case -1:
+		case 2:
+			System.out.println("컴퓨터 승리");
+			break;
+		default:
+			System.out.println("무승부");
+			break;
+		}
+
+	}
+
+
+
+}
+
+      
