@@ -1,0 +1,51 @@
+﻿1. 게임횟수를 입력받아서 로또 게임  
+  ㄱ. int [][] lottos ;
+int lottos[][];
+		char con = 'y';		
+		Scanner sc = new Scanner(System.in);
+		System.out.print(">게임횟수");
+		int game = sc.nextInt();
+		lottos = new int[game][6];
+int lottoNumber = (int)(Math.random()*45)+1;
+for (int j = 0; j < lottos.length; j++) {
+			dispLotto(lottos[j]);			
+		} //for
+private static void dispLotto(int lotto[]) {
+	for (int i = 0; i < lotto.length; i++) {
+					System.out.printf("[%02d]",lotto[i]);
+	} // for
+	System.out.println();
+}
+2. 변수와 참조변수 설명
+//변수 : 값을 저장하는 기억공간의 이름 
+//상수 : 값을 저장하는 기억공간의 이름
+//참조변수 = 주소값을 저장(참조)하는 변수
+//참조타입 ( 배열 , 클래스 , 인터페이스 )
+변수는 직접적인 값을 가져온다
+참조변수는 해당하는 주소값으로 가져온다 
+
+3. int [][] m = new int[5][5];
+   2차원 배열 m 을 선언 후 아래와 같이 채워 넣고 출력하는 코딩을 하세요
+   fillM(m) 구현
+   dispM(m) 구현
+		int  m[][] = new int[5][5];
+    int n = 1;
+	      int row = 0, col = 0;
+	      
+	      while (n <= 25) {
+	         m[row][col++] = n;	         
+	         
+	         if ( col%5==0 ) {
+	        	 n = m[row][col]+
+	            row++;col=0;
+   [실행결과]    
+	[01][02][03][04][10]
+	[05][06][07][08][26]
+	[09][10][11][12][42]
+	[13][14][15][16][58]
+	[28][32][36][40][136]  
+
+4. OOP에 대해서 설명하세요.	
+객채 지향적 프로그래밍 으로 명령어를 사용하기 쉽게 만들어준다 
+//Object Oriennted Programing
+//객체 단위로 프로그래밍 하는 기법 
