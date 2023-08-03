@@ -25,7 +25,12 @@ public class Ex01_02 {
 //		12 > 6
 //		13 > 7
 //		20 > 8
+<<<<<<< HEAD
 //		열갯수 * 행갯수 + 열갯수 = 인덱스
+=======
+//		4 * 행갯수 + 열갯수 = 인덱스
+//		1차원 배열 값 = 2차원 배열 열크기*행+열 값 
+>>>>>>> refs/remotes/origin/master
 		for (int i = 0; i < m.length; i++) {			
 			for (int j = 0; j < m[i].length; j++) {
 				n[m[0].length*i+j]=m[i][j];

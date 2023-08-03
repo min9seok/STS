@@ -55,6 +55,7 @@ public class Ex04 {
 	      } // while
 	      
 	   }
+<<<<<<< HEAD
 	private static void fillM06(int[][] m) {
 		// 00 00
 		// 01 01
@@ -143,6 +144,116 @@ public class Ex04 {
 	 	  // 20 04
 		  // 21 13
 		  // 22 22
+=======
+	   private static void fillM06(int[][] m) {
+		      // 00 00
+		      // 01 01
+		      // 02 02
+		      // 03 03
+		      // 04 04
+		      
+		      // 10 14
+		      // 11 24 
+		      // 12 34
+		      // 13 44
+		      
+		      // 14 43
+		      // 20 42
+		      // 21 41
+		      // 22 40
+
+		      // 23 30
+		      // 24 20
+		      // 30 10
+		      
+		      // 31 11
+		      // 32 12
+		      // 33 13
+		      
+		      // 34 23
+		      // 40 33
+		      
+		      // 41 32
+		      // 42 31
+		      
+		      // 43 22
+		      
+		      // 44 23
+		      //1set  e+1
+		      //2set  f+1
+		      //3set  e-1
+		      //4set  f-1
+		      int n = 1;
+		      int index = m.length*m[0].length;
+		      int row,col;
+		      int f=0,e=0;
+		         row = m.length;
+		         col = m[0].length-1;
+		         while(n<=index) {
+		         for (int i = 0; i < row; i++) {
+		               m[f][e] = n++;
+		               e++;
+		         } // for
+		         e--;f++;
+		         for (int i = 0; i < col; i++) {
+		               m[f][e] = n++;
+		               f++;
+		         }
+		         f--;e--;row--;
+		         for (int i = 0; i < row; i++) {
+		               m[f][e] = n++;
+		               e--;
+		         }
+		         col--;e++;f--;
+		         for (int i = 0; i < col; i++) {
+		               m[f][e] = n++;
+		               f--;
+		         }
+		         row--;e++;f++;
+		         for (int i = 0; i < row; i++) {
+		            m[f][e] = n++;
+		            e++;
+		         }
+		         col--;f++;e--;
+		         for (int i = 0; i < col; i++) {
+		            m[f][e] = n++;
+		            f++;
+		         }
+		         row--;f--;e--;
+		         for (int i = 0; i < row; i++) {
+		            m[f][e] = n++;
+		            e--;
+		         }
+		         col--;e++;f--;
+		         for (int i = 0; i < col; i++) {
+		            m[f][e] = n++;
+		            f--;
+		         }
+		         row--;e++;f++;
+		         for (int i = 0; i < row; i++) {
+		            m[f][e] = n++;
+		            e++;
+		         }
+		         }   
+		   }
+	   
+	private static void fillM05(int[][] m) {
+		
+		  // 00 00
+	      // 01 01
+	      // 02 10
+	      // 03 03
+	      // 04 11
+	      // 10 20
+	      // 11 03 
+	      // 12 12
+		  // 13 31
+  	      // 14 30
+	 	  // 20 04
+		  // 21 13
+		  // 22 22
+		
+>>>>>>> refs/remotes/origin/master
 		int k=0;			
 		for (int i = 0; i < m.length+m.length-1; i++) {
 			for (int j = 0; j < m.length; j++) {
