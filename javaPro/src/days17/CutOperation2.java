@@ -1,24 +1,39 @@
-package days16;
+package days17;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
-public class CutOperation {
+public class CutOperation2 {
 
 	public static void main(String[] args) {
-	Scanner scanner = new Scanner(System.in);
-	String index = "0";
-	String cut = "0";
-	System.out.println("막대기 갯수");
-	index = scanner.nextLine();
-	System.out.println("각 막대기 길이");
-	cut = scanner.nextLine();
-	cut.split(",");
-	int cuts[] = {};	
-	int len = Integer.parseInt(index);
-	for (int i = 0; i < len; i++) {
-//		cuts[i] = cut.charAt(i);
-		System.out.print(cut.charAt(i) );
-	} //for
+		/*
+		6
+		5 4 4 2 2 8
+		*/
+		Scanner scanner = new Scanner(System.in);
+		int n = scanner.nextInt();
+		int sticks[] = new int[n];
+		int sticksLength = sticks.length;
+		for (int i = 0; i < sticksLength; i++) {
+			sticks[i] = scanner.nextInt();			
+		} //for		
+		Arrays.sort(sticks); //오름차순
+		System.out.println(Arrays.toString(sticks));
+		
+		int index =0;
+		int sticksCount = sticksLength - index;
+		System.out.println(sticksCount);
+		
+		for (int i = 0; i < sticksLength; i++) {
+			if(sticks[index] != sticks[i]) {
+				index = i;
+				sticksCount = sticksLength - index; 
+				System.out.println(sticksCount);
+			}
+		} //for
+		
+		
+		
 	} //main
 
 }//class

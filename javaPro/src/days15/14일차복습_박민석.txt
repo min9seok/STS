@@ -1,0 +1,62 @@
+1. private로 선언된 필드에 대해서 설명하세요.
+같은 클래스 에서만 사용 가능 , 유효한 값만 사용하기 위하여 설정
+읽기 전용 쓰기전용 사용
+// getter setter 
+2. 기본형/참조형 매개변수에 대해서 설명하세요. 
+
+2-2.기본형/참조형 반환타입에 대해서 설명하세요.
+//		Point p1 = new Point(1,2);
+//		Point p2 = new Point(10,20);
+//		
+////		Point p3 = p1 + p2;
+//		Point p3 = p1.plusPoint(p2);
+//		p3.printPoint();
+3. 생성자에 대해서 설명하세요.
+생성자 메서드 
+메서드명 == 클래스명
+//오버로딩
+//객체생성 시 자동호출
+없을 때 컴파일시 디폴트 생성자 자동 생성
+리턴자료형 사용 안함
+생성자 인위적 호출 안됨 
+상속되지 않음
+
+4. this 키워드에 대해서 설명하세요.
+자신의 주소값을 가지는 참조변수
+멤버를 가리킬 때의 
+생성자에서 다른 생성자를 호출시 사용 (첫 번째 라인 코딩)
+단독으로 사용될 때
+
+5. static 키워드에 대해서 설명하세요.
+정적상태  공유변수 정적변수 클래스변수
+
+
+6. 필드(멤버변수)를 초기화 하는 방법에 대해서 설명하세요
+명시적 초기화 생성자 초기화
+6-2. 필드 초기화 우선 처리 순위에 대해서 설명하세요
+명시적>생성자
+7. 클래스 간의 관계에 대해서 설명하세요 .
+has - a  : A클래스가 B클래스를 가지다.
+is - a : A클래스는 B클래스 이다.
+
+8.   [취업 문제] ego(자아)
+  String n = "keNik";   
+  String m= "kKnie";   
+  
+  위의 두 문자열 n, m 이 알파벳과 알파벳갯수가 똑같은지 비교하는 코딩 
+  결과는 같을 경우 true/ 다를 경우 false 로 출력.
+  조건) 대소문자는 구분하지 않는다.  
+
+		  String n = "keNik";   
+		  String m= "kKnie";   		  
+		  char nArr[] = n.toCharArray();
+		  Arrays.sort(nArr);
+		  System.out.println(Arrays.toString(nArr));
+		  char mArr[] = m.toCharArray();
+		  Arrays.sort(mArr);
+		  System.out.println(Arrays.toString(mArr));
+		  n = String.valueOf(nArr);
+		  m = String.valueOf(mArr);
+		  System.out.println(n+ "  /  " +m);
+		  System.out.println(n.equalsIgnoreCase(m));
+

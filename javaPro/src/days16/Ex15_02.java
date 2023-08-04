@@ -1,5 +1,6 @@
 package days16;
 
+import java.io.BufferedReader;
 import java.io.IOException;
 import java.util.InputMismatchException;
 import java.util.Scanner;
@@ -13,9 +14,12 @@ import java.util.Scanner;
  *  예 ) 국어점수 입력받아서 수-가 등급 처리
  *    0<= ~ <=100 점수 범위가 벗어나면 예외 발생 처리
  */
-public class Ex15 {
+public class Ex15_02 {
 
 	public static void main(String[] args) {
+		
+//		BufferedReader br;
+//		br.readLine();
 		
 		// [checked 예외] > 예외처리
 		// Unhandled exception type IOException
@@ -24,8 +28,8 @@ public class Ex15 {
 		
 		// unchecked 예외 RuntimeException 상속
 		// checked 예외 Exception 상속 
-		int kor = getScore();
-		System.out.println(kor);
+//		int kor = getScore();
+//		System.out.println(kor);
 		
 		
 		
@@ -43,7 +47,7 @@ public class Ex15 {
 //
 	}//main
 //
-	private static int getScore() throws InputMismatchException {
+	private static int getScore() throws IOException {
 		
 		Scanner scanner = new Scanner(System.in);
 		int score;
@@ -54,7 +58,7 @@ public class Ex15 {
 		if (input.matches(regex)) {
 			score = Integer.parseInt(input);
 		}else {
-			throw new InputMismatchException("> 점수 범위(0~100) 벗어났다 . <");
+			throw new IOException("> 점수 범위(0~100) 벗어났다 . <");
 		}
 		return score;
 	}
