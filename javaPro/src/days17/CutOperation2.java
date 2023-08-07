@@ -20,17 +20,17 @@ public class CutOperation2 {
 		Arrays.sort(sticks); //오름차순
 		System.out.println(Arrays.toString(sticks));
 		
-		int index =0;
-		int sticksCount = sticksLength - index;
-		System.out.println(sticksCount);
-		
-		for (int i = 0; i < sticksLength; i++) {
-			if(sticks[index] != sticks[i]) {
-				index = i;
-				sticksCount = sticksLength - index; 
-				System.out.println(sticksCount);
-			}
-		} //for
+//		int index =0;
+//		int sticksCount = sticksLength - index;
+//		System.out.println(sticksCount);
+//		
+//		for (int i = 0; i < sticksLength; i++) {
+//			if(sticks[index] != sticks[i]) {
+//				index = i;
+//				sticksCount = sticksLength - index; 
+//				System.out.println(sticksCount);
+//			}
+//		} //for
 		
 		
 		

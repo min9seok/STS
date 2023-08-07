@@ -1,0 +1,50 @@
+1. 막대기 자르기(CutOperation) 전체 코딩을  각 라인별로 상세하게 설명하세요.
+package days17; // package 소문자 , 폴더생성 파일 첫번째 라인 선인 
+
+import java.util.Arrays; // main에서 Arrays를 사용한다 클래스 사용 시 풀네임을 생략하게해준다
+import java.util.Scanner; // main Scanner를 사용한다 // main이 아니라 class 안에서 라고 써야햇지..
+
+public class CutOperation { // calss 시작
+	
+	public static void main(String[] args) { // main 시작
+		 
+		Scanner scanner = new Scanner(System.in); // 키보드로  값 입력
+		int n = scanner.nextInt(); // 변수에 입력한 값 할당 
+		int [] sticks = new int[n]; // 배열에 입력한 변수만큼 할당
+		int sticksLength = sticks.length; // 배열의 크기 
+		for (int i = 0; i < sticksLength; i++) { // 반복문  시작
+			sticks[i] = scanner.nextInt();  // 반복하며 배열에 i 번째에 입력받은 값 할당
+		} // for // 반복문 종료
+		Arrays.sort(sticks);  // 오름차순 정렬 
+		System.out.println( Arrays.toString(sticks));  // 배열 출력
+		
+		int index = 0; // 변수선언
+		int sticksCount = sticksLength - index; // 변수 선언 배열길이 - index
+		System.out.println(sticksCount); //  값 출력
+		
+		for (int i = 0; i < sticksLength; i++) { // 반복문 시작
+			if( sticks[index] != sticks[i] ) { //제어문 시작  배열에 index와 i 값이 서로 다를때
+				index = i; // i를 index에 대입한다
+				sticksCount = sticksLength - index; // 배열의 길이에 index를 뺀값을 대입한다
+				System.out.println(sticksCount); // 값 출력
+			} //제어문 종료
+			
+		} // for //반복문 종료
+		
+	} // main //main 종료
+
+} //class 종료
+
+2.  days17.Ex01.java 파일을 읽어서 각 라인 번호를 붙여서 출력하는 코딩을 하세요.
+   ( 조건 : try~resources 문 사용 )
+		String fileName = "C:\\Users\\user\\git\\java-practice\\javaPro\\src\\days17\\Ex01.java";		 
+		try (FileReader fr = new FileReader(fileName);     
+		      BufferedReader br = new BufferedReader(fr);)  {
+			String line = null;
+			int num =1;
+			while((line=br.readLine()) != null) {
+			System.out.println(num++ + " : "+ line);
+			}
+		}catch (Exception e) {
+			e.printStackTrace();
+		}
