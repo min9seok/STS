@@ -1,0 +1,78 @@
+1.인터페이스에 대해서 상세히 설명하세요.
+추상클래스
+인터페이스 끼리 상속 가능 , 다중상속 가능
+
+2. 객체로 부터 [Class 객체]를 얻어오는 3가지 방법에 대해서 설명하세요 .
+객체가 어떤 클래스로 생성 파악 > 클래스 정보 얻어와서 활용 목적
+getClass
+ 3. String 클래스의 메서드 설명 - 기능, 매개변수, 리턴값(리턴자료형)
+  ㄱ. length()  길이, 배열의 길이 , int 
+  ㄴ. charAt()  문자, 문자열의 한문자 , char
+  ㄷ. compareTo() / compareToIgnoreCase() 문자열.compareTo(문자열) / 대소문자 구분X , 비교 , t / f 
+  ㄹ. equals() / equalsIgnoreCase() 문자열.equals(문자열) / 대소문자 구분 X, 비교 , t / f
+  ㅁ. concat()  문자열.concat(문자열) , 뒤에 붙이기 , String
+  ㅅ. startsWith()  처음값 , 처음값이 맞는지 비교 , t / f
+  ㅇ. endWith()    마지막값 , 마지막값이 맞는지 비교 ,  t / f
+  ㅈ. indexOf()  indexOf("aa") , 값 찾기 , int
+      lastIndexOf() lastIndexOf("aa) , 마지막부터 값 찾기 , int  
+  ㅊ. replace()   replace("a","b") , 값 변경 , String  
+      replaceAll( regex ) 정규화이용, 값 변경 , String
+      replaceFirst(regex) 값중 첫번째만 , 값 변경 , String
+  ㅋ. split() split(" ") , 기준 잘라내기 , String[]
+  ㅌ. toUpperCase() / toLowerCase() 대문자/소문자 , 값 변경 , String
+  ㅍ. trim()  공백제거 , 앞뒤 공백제거 , String
+  ㅎ. valueOf()  String.valueOf(), char[] > String 변환 , String
+  ㄱ. join()
+  ㄴ. format()  String.format , printf , String
+  ㄷ. matches() 문자열 확인 , 값 비교 , t / f 
+  ㄹ. substring() String.substring("0","3") , 잘라내기  , String
+  :
+  
+4. "1. Java 팀 구성.txt"  파일을 읽어서 본인의 팀원들만의 이름을 teamMember 배열에 저장한 후 팀장명을 제외한 나머지 팀원들의 이름을  내림차순으로 정렬해서 아래와 같이 출력하는 코딩을 하세요.
+[실행결과]  예 : [ 2조 ]
+<ul>
+	<li class="leader">임경재</li>
+	<li>이지현</li>
+	<li>유희진</li>
+	<li>박민석</li>
+	<li>김호영</li>
+	<li>김정주</li>
+	<li>고경림</li>
+</ul>
+		String key = "user.dir";
+		String userDir = System.getProperty(key);
+		String fileName = "Java 팀 구성.txt";
+		String path = String.format("%s\\src\\days19\\%s", userDir,fileName);
+		String line = null;
+		try(FileReader fr = new FileReader(path);
+			BufferedReader br = new BufferedReader(fr)) {
+			while((line = br.readLine())!=null  ) {
+				if(line.equals("2조")) {
+					line = br.readLine();
+					break;
+				}
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		String regex = "\\s*,\\s*";
+		String teamMembers[] = line.split(regex);
+		String teamLeader = null;
+		String teamMembers2[] = new String[teamMembers.length-1];
+		for (int i = 0, j =0; i < teamMembers.length; i++) {
+			if( teamMembers[i].contains("(팀장)")) {
+				teamLeader = teamMembers[i].replace("(팀장)","");
+				continue;
+			}else {
+				teamMembers2[j++] = teamMembers[i];
+			}
+		} //for	
+		Arrays.sort(teamMembers2,Collections.reverseOrder());
+		StringBuilder sb = new StringBuilder();
+		sb.append("<ul>");
+		sb.append(String.format("\r\n\t<li class=\"leader\">%s</li>",teamLeader));
+		sb.append("\r\n\t<li>"+String.join("</li>\r\n\t<li>", teamMembers2) + "</li>");
+		sb.append("\r\n</ul>");
+		System.out.println(sb.toString());
+5. https://school.programmers.co.kr/learn/courses/30/lessons/120913
+위의 주소 문제 풀기.

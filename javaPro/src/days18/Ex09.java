@@ -5,8 +5,8 @@ public class Ex09 {
 	public static void main(String[] args) {
 		
 		//               StringBuffer, StringBuilder 클래스
-		// 멀티스레드         안전X         안전O
-		// 동기화 처리          X             O
+		// 멀티스레드         안전O         안전X
+		// 동기화 처리          O             X
 		
 		//
 		// 언제 사용하는가? 변경가능한 클래스(삽입,수정,삭제,추가)
