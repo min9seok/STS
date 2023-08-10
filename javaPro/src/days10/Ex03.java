@@ -9,6 +9,7 @@ import java.util.Scanner;
  * @date 2023. 7. 26. - 오전 11:16:42
  * @subject 배열 단점 > 컬렉션 클래스
  * @content 1) 배열크기 고정(자동 증가/감소 X) 
+ *          2) 요소 삽입
  */
 public class Ex03  {
 	
