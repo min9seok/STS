@@ -48,7 +48,7 @@ public class Ex03 {
 
 	}//main
 
-	private static void dispDiffDays(Date sday, Date eday) {
+	public static void dispDiffDays(Date sday, Date eday) {
 		long diff = eday.getTime() - sday.getTime();
 		long 몫 = diff/(1000*60*60*24);
 		System.out.printf("%dd-",몫);
@@ -68,13 +68,13 @@ public class Ex03 {
 		몫 = diff/1;
 		System.out.printf("%dms-\n",몫);
 		
-		try {
-			Thread.sleep(10);
-		} catch (InterruptedException e) {			
-			e.printStackTrace();
-		} // 10ms 
+//		try {
+//			Thread.sleep(10);
+//		} catch (InterruptedException e) {			
+//			e.printStackTrace();
+//		} // 10ms 
 		
-		dispDiffDays(sday, new Date());
+//		dispDiffDays(sday, new Date());
 		
 	}
 
