@@ -1,0 +1,32 @@
+1. 컬렉션 클래스의 종류 및 특징에 대해서 설명하세요.
+ 
+     ArrayList  
+     Queue  단방향 offer poll peek
+     Deque  양방향 push pop peek
+     List
+     LinkedHashSet
+     Vactor ArraysList와 동일하지만 멀티스레드에서 안전
+     HashSet
+     Node  주소값을 참조
+2. 로또 게임 횟수를 입력받아서 게임 횟수 만큼 로또 번호를 출력하는 전체 코딩을 하세요.
+  ( 조건 : 컬렉션 클래스 선택 후 사용 )
+  ( 조건 : 각 로또번호가 오름차순 정렬 후 출력 )
+    
+[출력형식]  
+1게임 : [09][14][18][27][34][36]
+2게임 : [12][18][29][36][39][42]
+3게임 : [09][14][20][24][27][35]
+4게임 : [06][24][29][32][39][42]
+5게임 : [02][11][23][42][44][45]  
+		Scanner sc = new Scanner(System.in);		
+		int game = sc.nextInt();			
+		LinkedHashSet lotto = null;			
+		ArrayList lottos = new ArrayList();
+		for (int i = 0; i < game; i++) {
+			lotto = new LinkedHashSet();		
+			filllotto(lotto);
+			lottos.add(lotto);			
+		}			
+		displottos(lottos);
+3. 3반 30명 학생의 이,국,영,수,총,평,등,전등를 처리하는 코딩을 하세요.
+  ( 조건 : 컬렉션 클래스 선택 후 사용 )
