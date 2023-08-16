@@ -1,0 +1,59 @@
+1. 컬렉션 클래스의 종류 및 특징에 대해서 설명하세요.
+  list 순서가 있고 중복을 허용
+	ArrayList
+  set 순서 X 중복 허용X
+	HashSet
+  map (key,value) 한쌍 순서가 없고 key 중복 허용X
+	Hashmap
+2. days19 패키지 안에 있는 
+  "1. Java 팀 구성.txt" 파일을 읽어와서
+  
+   Map 컬렉션 클래스 사용해서
+      key : 1조, 2조, 3조
+      value :  직위(급)과 이름을 저장하는 클래스를 선언하고
+               그 클래스 객체를 저장하는 컬렉션 클래스 사용   
+   저장하고 출력하는 코딩을 하세요.                
+public class Ex01 {
+		static HashMap<String,HashMap<String,String>> hp = new HashMap();
+	public static void main(String[] args) {
+		String url = ".\\src\\days19\\Java 팀 구성.txt";
+		String line="",line2="",line3="";
+		try(FileReader fr = new FileReader(url);				
+			BufferedReader br = new BufferedReader(fr)) {			
+			while((line = br.readLine())!=null  ) {
+				if(line.equals("1조")) {
+					line = br.readLine();					
+				}
+				 if(line.equals("2조")) {
+					line2 = br.readLine();
+				}
+				 if(line.equals("3조")) {
+					line3 = br.readLine();
+				}
+//				 Iterator<Entry<String, HashMap<String, String>>> ir = hp.entrySet().iterator();								
+			}			
+		      if (     !hp.containsKey("1조")   ) {
+		          hp.put("1조", new HashMap<String, String>());
+		       }
+		      if (     !hp.containsKey("2조")   ) {
+		          hp.put("2조", new HashMap<String, String>());
+		       }
+		      if (     !hp.containsKey("3조")   ) {
+		          hp.put("3조", new HashMap<String, String>());
+		       }
+		      HashMap<String, String>  group =	hp.get(line);
+		      HashMap<String, String>  group2 =	hp.get(line2);
+		      HashMap<String, String>  group3 =	hp.get(line3);		
+		      hp.put(line,group);
+		      hp.put(line2,group2);
+		      hp.put(line3,group3);
+			System.out.println(hp);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+	}//main
+}//class
+3. Properties 컬렉션 클래스에 대해서 상세히 설명하세요.
+Properties == HashTable<String,String>
+ 

@@ -1,0 +1,95 @@
+1. Date 타입을 Calendar 타입으로 변환하는 코딩을 하세요.
+Date d = new Date();
+		Calendar c = Calendar.getInstance();
+		 c.setTime(d);
+1-2. Calendar 타입을  Date 타입으로 변환하는 코딩을 하세요.
+Calendar c = Calendar.getInstance();
+		Date d = c.getTime();
+2. String source = "2023/08/10 (목) 12:23:01"
+문자열 source를 Calendar 객체로 변환해 
+"2023년 8월 10일 (목)"으로 출력하는 코딩을 하세요 .
+// String > simpleDataFormat > Date > Calendat > Date > sdf.format String 변경 순서 
+String source = "2023/08/10 (목) 12:23:01";
+		String pattern = "yyyy/MM/dd (E) hh:mm:ss";
+		SimpleDateFormat sdf = new SimpleDateFormat(pattern);
+		Date d = sdf.parse(source);
+		System.out.println(d.toLocaleString());
+		Calendar c = Calendar.getInstance();
+		c.setTime(d);
+		d = c.getTime();
+		pattern = "yyyy년 M월 d일 (E)";
+		sdf = new SimpleDateFormat(pattern);
+		String strd = sdf.format(d);
+		System.out.println(strd);
+3-1. java.time 패키지에 대해서 설명하세요.  
+4가지 하위 패키지 구성 
+3-2. java.time패키지의 4가지 하위 패키지에 대해서 설명하세요 .
+java.time.chrono 달력
+	 	java.time.format 형변환 패키지
+		java.time.temporal 날짜 시간의 필드 유닛
+		java.time.zone 시간대
+3-3. java.time 패키지의 핵심 클래스에 대해서 설명하세요. 
+LocalDate
+	LocalTime
+	LocalDateTime
+	ZoneDateTime
+3-4. Period, Duration 클래스에 대해서 설명하세요.
+날짜와 날짜 사이의 간격
+시간과 시간 사이의 간격
+3-5. TemporalUnit 인터페이스와  ChronoUnit 열거형에 대해서 설명하세요 . 
+3-6. TemporalField 인터페이스와 ChronoField 열거형에 대해서 설명하세요 .
+3-7. java.time 패키지의 핵심 클래스의 객체 생성 방법에 대해서 설명하세요 .
+ now() of()
+4. java.time 패키지의 핵심 클래스
+ 1) 객체 생성하는 방법
+now() of()
+ 2) 특정 필드를 얻어오는 방법
+get()
+ 3) 특정 필드를 수정하는 방법
+ with() plus() minus()
+5. 개강일(2023.7.13)로부터 100일 되는 날짜를 출력하세요. 
+ 1) Date 클래스 사용
+Date d = new Date(2023-1900, 7-1, 13);
+
+		(1)d.setDate(13+100);
+		(2)d.setDate(d.getDate()+100);
+		System.out.println(d.toLocaleString());
+
+ 2) Calendar 클래스 사용
+Date d = new Date(2023-1900,07-1,13);
+		Calendar c = Calendar.getInstance();
+		d.setDate(13+100);
+		 c.setTime(d);
+		System.out.println(c.getTime().toLocaleString());
+		(이게 정답이지 형변환을 하면 안되니까)
+		Calendar c = new GregorianCalendar(2023, 7-1, 13);
+		c.add(Calendar.DATE,100);
+ 3) LocalDate 클래스 사용
+   LocalDate ld = LocalDate.of(2023,7,13);
+			(1)ld = ld.plusDays(100);
+			(2)ld = ld.plus(100,ChronoUnit.DAYS);
+			System.out.println(ld);
+6. 수료일(2023.12.27)까지 남은 기간을 아래와 같이 출력하세요 . 
+   예)
+   27일 22시간 17분 1초 883밀초  
+
+7. String source = "번호:1,이름:홍길동,주소:서울 양천구 목동";
+   위의 문자열에서 MessageFormat 클래스를 사용해서
+   번호,이름,주소만 얻어와서 아래와 같이 출력하세요.
+   
+   [출력형식]
+    1
+	홍길동
+	서울 양천구 목동
+String source = "번호:1,이름:홍길동,주소:서울 양천구 목동";		
+		String pattern = "번호:{0},이름:{1},주소:{2}";
+		MessageFormat mf = new MessageFormat(pattern);		
+		try {
+			Object[] mff = mf.parse(source);			
+			for (Object object : mff) {
+				System.out.println(object);
+			}
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
+   

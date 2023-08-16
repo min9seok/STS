@@ -1,0 +1,74 @@
+﻿1.  주민등록번호를 검증( check ) 하는 함수를 선언하세요.
+    1) 기능         :  isRRNCheck
+    2) 매개변수 :  String rrn
+    3) 리턴값 및 리턴자료형 : boolean
+        올바른 주민등록번호일 때 true 반환
+        잘못된 주민등록번호일 때 false 반환 
+        	public static boolean isRRNCheck(String rrn ) {
+		int len = rrn.length();
+		int count=2;
+		int sum =0;
+		for(int i=0; i<len; i++) {
+			sum = count*rrn.charAt(i);
+		}
+		sum = (11-(sum%11));	
+		return sum == 1;
+	}
+2. 10진수 정수를 입력받아서 8진수로 출력
+2-2. 10진수 정수를 입력받아서 16진수로 출력
+		int input; // 0000 1010  10 = 12 = A   
+		Scanner sc = new Scanner(System.in);
+		input = sc.nextInt();		
+		String b = Integer.toHexString(input);
+		String c = Integer.toOctalString(input);
+		System.out.println(b);
+		System.out.println(c);
+3. 주민등록번호를 입력받아서 만나이 계산해서 반환하는 함수 선언
+   ( 
+      함수 프로토타입(Prototype) == 함수 원형
+      int getAmericanAge( String rrn ) 
+   )          
+        	public static int getAmericanAge (String rrn) {
+		int ayear = Integer.parseInt(rrn.substring(0,2))+1900;		
+		int amonth = Integer.parseInt(rrn.substring(2,6));
+		Calendar c = Calendar.getInstance();
+		int year = c.get(Calendar.YEAR);
+		int month = c.get(Calendar.MONTH)+1;
+		int day = c.get(Calendar.DATE);		
+		int mmdd = (month*100)+day;
+		boolean flag = amonth - mmdd >= 0;		
+		int AmericanAge = year - ayear -1 +(!flag?0:-1); 
+		return AmericanAge;	
+	}
+4. 달력을 그리기 위한 아래 함수(메서드)들를 선언하세요 .
+  1) private static int getDayOfWeek(int year, int month, int day)
+    	private static int getDayOfWeek(int year, int month, int day) {
+		System.out.println("\t\t\t["+year+"년 "+month+"월]");
+		System.out.println("-".repeat(60));	
+		System.out.println("\t일\t월\t화\t수\t목\t금\t토");
+		System.out.println("-".repeat(60));
+		int count=0;
+		
+		for(int i=1; i<=31; i++) {
+			System.out.print("\t"+i);
+			count++;
+			if(count%7==0) {
+				System.out.println();		
+			}
+		}
+		System.out.println();
+		//일
+		System.out.println("-".repeat(60));
+		
+		return 0;
+	}
+  2) private static int getTotalDays(int year, int month, int day) 
+  3) private static int getLastDay(int year, int month)         
+
+        
+        
+        
+        
+        
+        
+       
