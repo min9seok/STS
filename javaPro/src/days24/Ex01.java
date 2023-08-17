@@ -27,8 +27,8 @@ public class Ex01 {
 				String tNames[] = line.split("\\s*,\\s*");
 				teamList = new ArrayList<MemberVO>();
 				for (String tName : tNames) {
-					if(tName.contains("(팀장")) {
-						tName.replace("(팀장)","");
+					if(tName.contains("(팀장)")) {
+						tName = tName.replace("(팀장)","");
 						memberVO = new MemberVO(tName, "팀장");
 					}else {
 						memberVO = new MemberVO(tName, "팀원");
@@ -46,7 +46,7 @@ public class Ex01 {
 
 	}//main
 
-	private static void dispTeamMember(HashMap<String, ArrayList<MemberVO>> teamMap) {
+	public static void dispTeamMember(HashMap<String, ArrayList<MemberVO>> teamMap) {
 		Set<Entry<String, ArrayList<MemberVO>>> eset = teamMap.entrySet();
 		Iterator<Entry<String, ArrayList<MemberVO>>> ir = eset.iterator();
 		String teamName = null;
