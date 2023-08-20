@@ -1,0 +1,94 @@
+1.  "1. Java 팀 구성.txt" 파일을 읽어와서
+    HashMap 컬렉션 클래스를 사용해서 
+    key   - TeamVO (name, totalNumber , leader ) 
+    value - ArrayList<MemberVO>
+    로 저장해서 출력하는 코딩을 하세요. 
+    ( 조건 1: key 값으로 TeamVO 클래스 선언 )
+    ( 조건 2: value 값으로 어제 선언한 MemberVO 클래스 사용 )
+
+ [출력형식]
+ 
+[1조(7명) - 이경서]
+  [1] 신종혁
+  [2] 이재영
+  [3] 송해영
+  [4] 신기범
+  [5] 이준희
+  [6] 김성준 
+[2조(7명) - 박민석]
+  [1] 유희진
+  [2] 고경림
+  [3] 임경재
+  [4] 이지현
+  [5] 김정주
+  [6] 김호영  
+[3조(6명) - 박정호]
+  [1] 이상문
+  [2] 이주영
+  [3] 정하영
+  [4] 이동현
+  [5] 주강민   
+		String file = ".\\src\\days19\\Java 팀 구성.txt";
+		try(FileReader fr = new FileReader(file);
+			BufferedReader br = new BufferedReader(fr)	) {
+			ArrayList<MemberVO> list = new ArrayList();
+			HashMap<TeamVO,ArrayList<MemberVO>> hp = new LinkedHashMap();
+			String line = "";			
+			String name = "";
+			int totalNumber = 0;
+			String leader = "";
+			TeamVO teamVO = null;						
+			MemberVO memberVO = null;
+			while((line=br.readLine())!= null && !line.equals("")  ) {
+				name = line;
+				line = br.readLine();								
+				String teamNames[] = line.split("\\s*,\\s*");
+				list = new ArrayList<MemberVO>();
+				totalNumber = list.size();				
+				for (String string : teamNames) {					
+					if(string.contains("(팀장)")) {
+						string = string.replace("(팀장)","");
+						teamVO = new TeamVO(name, totalNumber, leader);
+						memberVO = new MemberVO(string,"팀장"); 
+					}else {
+						memberVO = new MemberVO(string,"팀원");
+					}
+					list.add(memberVO);
+				}
+				hp.put(teamVO,list);
+			}
+			dispTeamMember(hp);
+			
+			
+		} catch (Exception e) {
+		e.printStackTrace();
+		}
+
+
+ 2-1.  제네릭스(Generics) 란 ? JDK1.5 버젼에서 추가 <T>
+ 2-2. 제네릭스의 장점  형변환의 번거로움이 줄어들어 코드가 간결해진다.
+ 2-3. 제네릭 클래스 선언 형식 class A<T>{}
+ 2-4. 용어 정리
+    
+    clas Box<T>{}
+    
+   위의 제네틱 클래스 선언을 보고
+    1) 원시 타입(raw Type)을 적으세요. BOX
+    2)타입변수을 적으세요. Type
+    3) 제네릭 클래스을 적으세요. <T>
+    
+    Box<String> b = new Box<>();
+    4) 대입된 타입을 적으세요. String
+    5) 제네릭 타입 호출 b
+ 2-5. 제한된 제네릭 클래스에 대해서 설명하세요.  
+    class FruitBox<T extends Fruit & Eatable> extends Box<T>{
+    }    
+ 2-6.  와일드 카드에 대해서 설명하세요.  ? 로 받아서 모든타입 대입가능
+    static Juice makeJuice(FruitBox<? extends Fruit> box){
+    }
+ 2-7. 제네릭 메서드란 ?  메서드의 선언부에 제네릭 타입 선언
+ 2-8. 제네릭 메서드 선언 형식을 적으세요. 
+	[점][기] <T> 클래스명 함수명(){}
+ 3-1. 열거형(enums)이란 ?  서로 관련된 상수를 편리하게 사용하기 위해
+ 3-2. 열거형의 선언 형식을 적으세요.      
+enum 열거형이름 {상수 };        
